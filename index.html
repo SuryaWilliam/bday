@@ -6,11 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amei Birthday Party</title>
     <script src="/tl.js"></script>
-    <style></style>
+    <style>
+      #play1,
+      #play2 {
+        display: none;
+      }
+    </style>
   </head>
-  <body class="bg-black">
+  <body class="bg-black relative">
     <header
-      class="relative flex items-center justify-center h-screen mb-12 overflow-hidden"
+      class="relative flex items-center justify-center h-screen overflow-hidden"
     >
       <video autoplay loop muted class="fixed z-10 w-full hidden md:block">
         <source src="/bg.mp4" type="video/mp4" />
@@ -19,9 +24,39 @@
         <source src="/bgm.mp4" type="video/mp4" />
       </video>
 
-      <audio autoplay>
+      <audio autoplay id="audio">
         <source src="/bgs.mp3" type="audio/mp3" />
       </audio>
     </header>
+    <div
+      class="absolute text-[#fff] z-50 left-1/2 -translate-x-1/2 bottom-[210px] md:bottom-[150px] flex justify-center items-center cursor-pointer"
+      id="playb"
+    >
+      <div class="mx-2 md:text-xl font-bold" id="play1">PLAY</div>
+      <div id="play2">
+        <img src="/ytlogo.png" alt="" class="w-10 md:w-16" />
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+      $(function () {
+        $("#play1").delay(2000).fadeIn();
+        $("#play2").delay(2000).fadeIn();
+      });
+
+      var audio = $("#audio")[0];
+      var playBtn = $("#playb");
+
+      // On click event
+      playBtn.click(function () {
+        // Play your audio
+        audio.play();
+        // Hide it
+        $(audio).attr("hidden", "hidden");
+        // Remove this if you don't want to change the button text
+        playBtn.text("");
+      });
+    </script>
   </body>
 </html>
