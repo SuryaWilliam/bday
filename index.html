@@ -13,14 +13,26 @@
       }
     </style>
   </head>
-  <body class="bg-black relative">
+  <body class="bg-black">
     <header
       class="relative flex items-center justify-center h-screen overflow-hidden"
     >
-      <video autoplay loop muted class="fixed z-10 w-full hidden md:block">
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        class="fixed z-10 w-full hidden min-[420px]:block"
+      >
         <source src="/bg.mp4" type="video/mp4" />
       </video>
-      <video autoplay loop muted class="fixed z-10 w-full md:hidden">
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        class="fixed z-10 w-full min-[420px]:hidden"
+      >
         <source src="/bgm.mp4" type="video/mp4" />
       </video>
 
@@ -29,12 +41,12 @@
       </audio>
     </header>
     <div
-      class="absolute text-[#fff] z-50 left-1/2 -translate-x-1/2 bottom-[210px] md:bottom-[150px] flex justify-center items-center cursor-pointer"
+      class="fixed text-[#fff] z-50 left-1/2 -translate-x-1/2 bottom-14 md:bottom-[170px] flex justify-center items-center cursor-pointer"
       id="playb"
     >
-      <div class="mx-2 md:text-xl font-bold" id="play1">PLAY</div>
+      <div class="mx-2 text-3xl font-bold" id="play1">PLAY</div>
       <div id="play2">
-        <img src="/ytlogo.png" alt="" class="w-10 md:w-16" />
+        <img src="/ytlogo.png" alt="" class="w-16" />
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
