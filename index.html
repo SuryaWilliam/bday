@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style></style>
+  </head>
+  <body class="bg-black">
+    <header
+      class="relative flex items-center justify-center h-screen mb-12 overflow-hidden"
+    >
+      <video autoplay loop muted class="fixed z-10 w-full hidden md:block">
+        <source src="/bg.mp4" type="video/mp4" />
+      </video>
+      <video autoplay loop muted class="fixed z-10 w-full md:hidden">
+        <source src="/bgm.mp4" type="video/mp4" />
+      </video>
+
+      <iframe src="/bgs.mp3" allow="autoplay" id="audio"></iframe>
+      <audio id="player" autoplay controls>
+        <source src="/bgs.mp3" type="audio/mp3" />
+      </audio>
+
+      <script type="text/javascript"></script>
+    </header>
+  </body>
+</html>
